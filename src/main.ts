@@ -36,11 +36,12 @@ async function bootstrap() {
   }) as boolean;
 
   if (swaggerEnabled) {
-    const swaggerDoc = swaggerHelpers.createConfig(
+    const swaggerConfig = swaggerHelpers.createConfig(
       configService,
     ) as OpenAPIObject;
     const swaggerPath = swaggerHelpers.getPath(configService);
-    SwaggerModule.setup(swaggerPath, app, swaggerDoc);
+    const swaggerDocs = SwaggerModule.createDocument(app, swaggerConfig);
+    SwaggerModule.setup(swaggerPath, app, swaggerDocs);
     console.log(
       `[Nest] Swagger docs available at http://localhost:${port}/${swaggerPath}`,
     );
