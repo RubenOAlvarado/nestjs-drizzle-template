@@ -51,7 +51,16 @@ cp env.example .env
 - `SWAGGER_*`: Swagger docs config
 - `THROTTLE_TTL`, `THROTTLE_LIMIT`: Rate limiting
 
-### 4. Database setup & migrations
+### 4. Configure & start PostgreSQL with Docker
+
+Update the `docker-compose.yml` if necessary.
+Configure the `DATABASE_URL` in your `.env` file to match the Docker setup.
+
+```bash
+docker-compose up -d db
+```
+
+### 5. Database setup & migrations
 
 This template uses [Drizzle Kit](https://orm.drizzle.team/docs/overview) for migrations.
 
