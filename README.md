@@ -66,9 +66,10 @@ This template uses [Drizzle Kit](https://orm.drizzle.team/docs/overview) for mig
 
 - Define your schema in `src/common/database/schemas/`
 - Configure Drizzle in `drizzle.config.ts`
+- Uncomment the schemas importation in `src/common/database/drizzle.client.ts` to register your schemas.
 - Run migrations (see Drizzle Kit docs for commands)
 
-### 5. Run the application
+### 6. Run the application
 
 ```bash
 # Development
@@ -79,7 +80,7 @@ npm run build
 npm run start:prod
 ```
 
-### 6. API Documentation
+### 7. API Documentation
 
 If enabled, Swagger docs are available at:
 
